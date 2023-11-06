@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 import { Request, Response } from 'express';
 
 // import from errors
-import { NotFoundError } from "../errors/not-found-error";
 import { NotAuthorizedError } from "../errors/not-authorized-error";
 import { DatabaseConnectionError } from "../errors/database-connection-error";
 
@@ -51,20 +50,20 @@ export const createUser = async (req: Request, res: Response) => {
 
 // get user by id
 export const getUserById = async (req: Request, res: Response) => {
-    const { id } = req.params
+    const { id } = req.params;
     try {
         const response = await prisma.user.findUnique({
             where: { id: id }
-        })
+        });
         res.status(200).json(response)
     } catch (error) {
-        throw new NotFoundError;
+        res.status(404).json({msg:'Not Found'});
     }
 }
 
 // update user by id
 export const updateUser = async (req: Request, res: Response) => {
-    const { id } = req.params
+    const { id } = req.params;
     const { name, email } = req.body
 
     try {
@@ -80,7 +79,7 @@ export const updateUser = async (req: Request, res: Response) => {
 
 // delete user by id 
 export const deleteUser = async (req: Request, res: Response) => {
-    const { id } = req.params
+    const { id } = req.params;
     try {
 
         await prisma.user.delete({
