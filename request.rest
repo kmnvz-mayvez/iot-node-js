@@ -33,3 +33,29 @@ Content-Type: application/json
      "name" : "admintest10",
      "email" : "admintest10@gmail.com"
 }
+
+// FOR Device
+###
+GET http://localhost:5000/device
+###
+GET http://localhost:5000/device/fcda7007-e772-4bf3-8e9e-926c772db38d
+###
+POST http://localhost:5000/device
+Content-Type: application/json
+
+{
+    "title" : "Lampu Kamar",
+    "description" : "Kamar",
+    "value" : "ON",
+    "authorEmail" : "manutama10@gmail.com"
+}
+###
+PUT http://localhost:5000/device/fcda7007-e772-4bf3-8e9e-926c772db38d
+Content-Type: application/json
+
+{
+    "title" : "Lampu Kamar",
+    "description" : "Kamar",
+    "value" : "ON",
+    "authorEmail" : "manutama10@gmail.com"
+}

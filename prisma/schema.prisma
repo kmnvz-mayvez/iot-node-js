@@ -17,4 +17,17 @@ model User {
   updatedAt DateTime @updatedAt
   email     String   @unique
   name      String?
+  device    Device[]
+}
+
+// user model
+model Device {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  value       String
+  author      User?    @relation(fields: [authorId], references: [id])
+  authorId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

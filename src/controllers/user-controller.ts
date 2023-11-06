@@ -22,7 +22,10 @@ export const createUser = async (req: Request, res: Response) => {
     const { name, email } = req.body
     try {
         const user = await prisma.user.findUnique({
-            where: { email: email }
+            where: { email: email },
+            include: {
+                device: true
+            }
         })
 
         if (user) return res.status(200).json({ 'pesan': 'email sudah terdaftar' })
@@ -31,6 +34,9 @@ export const createUser = async (req: Request, res: Response) => {
             data: {
                 name,
                 email
+            },
+            include: {
+                device: true
             }
         })
 
@@ -57,7 +63,7 @@ export const getUserById = async (req: Request, res: Response) => {
         });
         res.status(200).json(response)
     } catch (error) {
-        res.status(404).json({msg:'Not Found'});
+        res.status(404).json({ msg: 'Not Found' });
     }
 }
 
@@ -82,8 +88,17 @@ export const deleteUser = async (req: Request, res: Response) => {
     const { id } = req.params;
     try {
 
+        await prisma.device.deleteMany({
+            where: {
+                authorId: id,
+            }
+        })
+
         await prisma.user.delete({
             where: { id: id },
+            include: {
+                device: true
+            }
         })
 
         res.status(201).json({ msg: "User Deleted" })

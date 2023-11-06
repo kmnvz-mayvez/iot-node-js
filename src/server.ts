@@ -7,6 +7,9 @@ import cors from 'cors';
 // import from users
 import { userRouter } from './routes/user';
 
+// import form device 
+import { deviceRouter } from './routes/device';
+
 // import from errors
 import { NotFoundError } from './errors/not-found-error';
 import { errorHandler } from './middlewares/error-handler';
@@ -26,6 +29,8 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use(userRouter);
+
+app.use(deviceRouter);
 
 app.all('*', async (req, res) => {
     throw new NotFoundError();
