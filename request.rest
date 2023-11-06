@@ -6,8 +6,8 @@ POST http://localhost:5000/user
 Content-Type: application/json
 
 {
-    "name" : "manutama",
-    "email" : "manutama10@gmail.com"
+    "name" : "admintest",
+    "email" : "admintest20@gmail.com"
 }
 ###
 GET http://localhost:5000/user/98081337-22a9-45df-98d0-6519946cf5eb
