@@ -6,13 +6,13 @@ POST http://localhost:5000/user
 Content-Type: application/json
 
 {
-    "name" : "test10",
-    "email" : "test10@gmail.com"
+    "name" : "manutama",
+    "email" : "manutama10@gmail.com"
 }
 ###
-GET http://localhost:5000/user/7859eb7b-d128-4e9d-bc97-e8ffb5e1d9a5
+GET http://localhost:5000/user/98081337-22a9-45df-98d0-6519946cf5eb
 ###
-PUT http://localhost:5000/user/fa0ccbc5-4964-4754-857c-bf62a5ff5207
+PUT http://localhost:5000/user/98081337-22a9-45df-98d0-6519946cf5eb
 Content-Type: application/json
 
 {

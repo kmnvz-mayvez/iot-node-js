@@ -4,7 +4,10 @@ import 'express-async-errors';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
+// import from users
 import { userRouter } from './routes/user';
+
+// import from errors
 import { NotFoundError } from './errors/not-found-error';
 import { errorHandler } from './middlewares/error-handler';
 

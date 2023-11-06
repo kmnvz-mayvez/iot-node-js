@@ -8,7 +8,7 @@ import { DatabaseConnectionError } from "../errors/database-connection-error";
 
 const prisma = new PrismaClient()
 
-// get users form prisma
+// get connection from prisma
 export const getUser = async (req: Request, res: Response) => {
     try {
         const response = await prisma.user.findMany();
