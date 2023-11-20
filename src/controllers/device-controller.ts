@@ -17,7 +17,7 @@ export const getDevice = async (req: Request, res: Response) => {
 }
 
 export const createDevice = async (req: Request, res: Response) => {
-    const { title, description, authorEmail, value } = req.body;
+    const { title, description, category, authorEmail, value_string, value_number, value_boolean } = req.body;
     try {
         const author = await prisma.user.findUnique({
             where: { email: authorEmail }
@@ -30,7 +30,10 @@ export const createDevice = async (req: Request, res: Response) => {
             data: {
                 title,
                 description,
-                value,
+                category,
+                value_number,
+                value_boolean,
+                value_string,
                 author: {
                     connect: {
                         id: author.id
@@ -58,15 +61,17 @@ export const getDeviceById = async (req: Request, res: Response) => {
 
 export const updateDevice = async (req: Request, res: Response) => {
     const { id } = req.params
-    const { title, description, value } = req.body
-
+    const { title, category, description, value_string, value_number, value_boolean } = req.body
     try {
         const response = await prisma.device.update({
             where: { id: id },
             data: {
                 title,
                 description,
-                value
+                category,
+                value_number,
+                value_boolean,
+                value_string,
             }
         })
         res.status(201).json(response)

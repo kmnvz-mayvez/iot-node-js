@@ -44,10 +44,13 @@ POST http://localhost:5000/device
 Content-Type: application/json
 
 {
-    "title" : "Lampu Kamar",
+    "title" : "Lampu Taman",
     "description" : "Kamar",
-    "value" : "ON",
-    "authorEmail" : "manutama10@gmail.com"
+    "category" : "Lampu",
+    "value_number": 1,
+    "value_boolean": true,
+    "value_string" : "ON",
+    "authorEmail" : "admintest20@gmail.com"
 }
 ###
 PUT http://localhost:5000/device/fcda7007-e772-4bf3-8e9e-926c772db38d
@@ -55,6 +58,29 @@ Content-Type: application/json
 
 {
     "title" : "Lampu Kamar",
+    "description" : "Kamar",
+    "value" : "ON",
+    "authorEmail" : "manutama10@gmail.com"
+}
+
+// Cyclcing app 
+
+// device
+### 
+GET https://blue-violet-bighorn-sheep-boot.cyclic.app/device
+### 
+GET https://blue-violet-bighorn-sheep-boot.cyclic.app/device/6afce9f8-4391-46b6-ae87-a36e45f3d181
+
+###
+// user 
+GET https://blue-violet-bighorn-sheep-boot.cyclic.app/user/275e4e51-cb43-4214-ab46-b73af937355b
+
+###
+PUT https://blue-violet-bighorn-sheep-boot.cyclic.app/device/6afce9f8-4391-46b6-ae87-a36e45f3d181
+Content-Type: application/json
+
+{
+    "title" : "Lampu_Kamar",
     "description" : "Kamar",
     "value" : "ON",
     "authorEmail" : "manutama10@gmail.com"

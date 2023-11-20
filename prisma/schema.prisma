@@ -22,12 +22,15 @@ model User {
 
 // user model
 model Device {
-  id          String   @id @default(uuid())
-  title       String
-  description String?
-  value       String
-  author      User?    @relation(fields: [authorId], references: [id])
-  authorId    String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            String   @id @default(uuid())
+  title         String
+  description   String?
+  category      String
+  value_string  String
+  value_boolean Boolean
+  value_number  Int
+  author        User?    @relation(fields: [authorId], references: [id])
+  authorId      String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
