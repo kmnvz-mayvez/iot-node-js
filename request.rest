@@ -80,8 +80,8 @@ POST https://blue-violet-bighorn-sheep-boot.cyclic.app/user
 Content-Type: application/json
 
 {
-    "name" : "admintest",
-    "email" : "admintest50@gmail.com"
+    "name" : "manutama",
+    "email" : "adityavez10@gmail.com"
 }
 ###
 PUT https://blue-violet-bighorn-sheep-boot.cyclic.app/device/ca36d919-70b1-47a9-9ee5-10ce91783579
@@ -91,8 +91,22 @@ Content-Type: application/json
     "title" : "Lampu Taman",
     "description" : "Kamar",
     "category" : "Switch",
-    "value_number": 1,
+    "value_number": 19,
     "value_boolean": true,
     "value_string" : "ON",
     "authorEmail" : "admintest20@gmail.com"
+}
+
+###
+POST https://blue-violet-bighorn-sheep-boot.cyclic.app/device
+Content-Type: application/json
+
+{
+    "title" : "Lampu Taman",
+    "description" : "Kamar",
+    "category" : "Switch",
+    "value_number": 19,
+    "value_boolean": true,
+    "value_string" : "ON",
+    "authorEmail" : "adityavez10@gmail.com"
 }
