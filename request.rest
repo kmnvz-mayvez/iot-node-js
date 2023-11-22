@@ -46,7 +46,7 @@ Content-Type: application/json
 {
     "title" : "Lampu Taman",
     "description" : "Kamar",
-    "category" : "Lampu",
+    "category" : "Switch",
     "value_number": 1,
     "value_boolean": true,
     "value_string" : "ON",
@@ -69,19 +69,30 @@ Content-Type: application/json
 ### 
 GET https://blue-violet-bighorn-sheep-boot.cyclic.app/device
 ### 
-GET https://blue-violet-bighorn-sheep-boot.cyclic.app/device/6afce9f8-4391-46b6-ae87-a36e45f3d181
-
+GET https://blue-violet-bighorn-sheep-boot.cyclic.app/user/191e117d-cbdf-40bc-9645-933d2160770a
+###
+GET https://blue-violet-bighorn-sheep-boot.cyclic.app/user
 ###
 // user 
 GET https://blue-violet-bighorn-sheep-boot.cyclic.app/user/275e4e51-cb43-4214-ab46-b73af937355b
-
 ###
-PUT https://blue-violet-bighorn-sheep-boot.cyclic.app/device/6afce9f8-4391-46b6-ae87-a36e45f3d181
+POST https://blue-violet-bighorn-sheep-boot.cyclic.app/user
 Content-Type: application/json
 
 {
-    "title" : "Lampu_Kamar",
+    "name" : "admintest",
+    "email" : "admintest50@gmail.com"
+}
+###
+PUT https://blue-violet-bighorn-sheep-boot.cyclic.app/device/ca36d919-70b1-47a9-9ee5-10ce91783579
+Content-Type: application/json
+
+{
+    "title" : "Lampu Taman",
     "description" : "Kamar",
-    "value" : "ON",
-    "authorEmail" : "manutama10@gmail.com"
+    "category" : "Switch",
+    "value_number": 1,
+    "value_boolean": true,
+    "value_string" : "ON",
+    "authorEmail" : "admintest20@gmail.com"
 }
